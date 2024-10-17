@@ -6,3 +6,6 @@ Includes
     <li>Login</li>
     <li>Logout</li>
 </ul>
+
+followed along tutorial below:
+https://www.itsolutionstuff.com/post/laravel-11-rest-api-authentication-using-sanctum-tutorialexample.html
