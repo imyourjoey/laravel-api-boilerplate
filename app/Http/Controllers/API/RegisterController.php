@@ -56,4 +56,20 @@ class RegisterController extends BaseController
             return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
         } 
     }
+
+    public function logout(Request $request): JsonResponse
+    {
+        // Revoke the token that is used for authentication
+        auth('sanctum')->user()->tokens()->delete();
+
+        return $this->sendResponse([], 'User logged out successfully.');
+    }
+
+    public function unauthenticated()
+    {
+        return response()->json([
+            'status' => false,
+            'message' => 'Unauthenticated. Please login first',
+        ], 401);
+    }
 }
